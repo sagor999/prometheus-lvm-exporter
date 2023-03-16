@@ -7,8 +7,8 @@ import (
 )
 
 func TestGroupNameFields(t *testing.T) {
-	got := PV.fields()
-	want := []string{"pv_uuid", "pv_name", "pv_all", "-pv_device_id"}
+	got := LV.fields()
+	want := []string{"lv_uuid", "lv_name", "lv_all"}
 
 	if diff := cmp.Diff(got, want); diff != "" {
 		t.Errorf("fields difference (-got +want):\n%s", diff)

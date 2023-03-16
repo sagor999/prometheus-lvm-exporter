@@ -16,8 +16,13 @@ func (n GroupName) fields() []string {
 		selected = append(selected,
 			fmt.Sprintf("%s_uuid", string(n)),
 			fmt.Sprintf("%s_name", string(n)),
-			fmt.Sprintf("%s_all", string(n)),
-			fmt.Sprintf("-%s_device_id", string(n)),
+			fmt.Sprintf("%s_size", string(n)),
+			fmt.Sprintf("%s_free", string(n)),
+			fmt.Sprintf("%s_used", string(n)),
+			fmt.Sprintf("%s_attr", string(n)),
+			fmt.Sprintf("%s_allocatable", string(n)),
+			fmt.Sprintf("%s_missing", string(n)),
+			fmt.Sprintf("%s_tags", string(n)),
 		)
 	case LV, VG:
 		selected = append(selected,
@@ -41,7 +46,7 @@ const (
 	PVSEG = GroupName("pvseg")
 )
 
-var AllGroupNames = []GroupName{LV, VG, SEG, PVSEG}
+var AllGroupNames = []GroupName{PV, LV, VG, SEG, PVSEG}
 
 type ReportData struct {
 	PV    []Row `json:"pv"`
