@@ -12,7 +12,14 @@ func (n GroupName) fields() []string {
 	var selected []string
 
 	switch n {
-	case PV, LV, VG:
+	case PV:
+		selected = append(selected,
+			fmt.Sprintf("%s_uuid", string(n)),
+			fmt.Sprintf("%s_name", string(n)),
+			fmt.Sprintf("%s_all", string(n)),
+			fmt.Sprintf("-%s_device_id", string(n)),
+		)
+	case LV, VG:
 		selected = append(selected,
 			fmt.Sprintf("%s_uuid", string(n)),
 			fmt.Sprintf("%s_name", string(n)),
