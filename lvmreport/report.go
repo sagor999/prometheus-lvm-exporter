@@ -41,7 +41,7 @@ const (
 	PVSEG = GroupName("pvseg")
 )
 
-var AllGroupNames = []GroupName{PV, LV, VG, SEG, PVSEG}
+var AllGroupNames = []GroupName{LV, VG, SEG, PVSEG}
 
 type ReportData struct {
 	PV    []Row `json:"pv"`
